@@ -1,0 +1,206 @@
+Network Firewall : Firewall is a nothing but virtual wall or security devices which protects our privet network against
+                   incoming and outgoing traffic.
+				   Firewall could be software or hardware.
+				   Software firewall are programms installed on our computer.
+				   Hardware firewall established on our gateway devices or on network boundries. 
+				   Firewall also helps to access unothorised site to user who is rely in privet network.
+				   
+Packet filtering firewall : set the rules to allowe incoming traffic into the network depends on IP addresess, IP Protocols and 
+Port number.
+Proxy Firewall : It pretends as you who communicating with outer network 
+                 they hide your identity to outer network 
+				 they known as Application level gateway.
+				 
+Software firewall : Are installed on our computer those are nothing but client sides firewall 
+                    they set the rules w.r.t.  IP addresess, IP ports to allowe or block traffic from network or into network.
+					
+Hardware firewall : Are installed on gateway devices to protect multiple computers from incoming melisisous traffic.
+
+Port security : logical ports IP addresess and physical ports nothing but access ports of devices or server. 
+
+Different types of Firewall : 
+
+1)Proxy server firwall : Proxy server firewall can block websites or specific IP addresess, encrypt data so it can not be read 
+                         during transmission and mask or change your IP addresess.
+
+2)Packet filtering : this firewall inspects all the packets transmitted through it.
+                     it is stateless inspection.
+					 
+3)statefull Inspection: also known as Dynamic filtering where firewall examins the key parts of packet instead of the contents
+                        of each packet. 
+						statefull inspection monitors connection, only incoming packets that match a known active connections
+						are allowed.
+					
+4)Undefined Threat manager (UTM) : combine a Firewall against the malware (the program or file which is harmful to end points)
+                                 , content filtre , intrusion detection (suspicious activity alert)
+                                 and spam protection.
+							  
+5)Next Genration Firewall : it inspects the packet all the way down at appliction level . it combines deep packet inspection,
+                            content filter, intrusion prevention and statefull inspection. 
+                         
+						 
+===============================================================================================================================================
+
+Why firewall is important?
+-At network edge to block and mitigate external threats.
+-inside network protect against the internal threats and lateral moments.
+-As software components deployed on endpoints and other devices to filter and regulate traffic.
+
+Firewall functions : 
+Access control : firewalls can be used to what kind of inbound and outbound traffic is allowed in network.
+Threat defense : firewalls can detect and block the threats before they reach the network.
+Logging and Auditing : firewalls keeps track or events on a network , which can be used to identitify security issue.
+source of threats data : firewall can be use study an evolving threats and define new set of rules or attacking stratergies
+                         to the network.
+
+Confidentiality : preventing sensitive information from access by the unothorised parties 
+                  firewall defines access rules that allow only authorised parties can access the network resourcess
+
+Integrity : firewalls ensuring that organisational data remains accurate and trustworthy, is nor tampered.
+            firewall prevents intigrity by preventing attckes gaining access to valuable data in network.
+
+Availability : ensuring the data is available for authorised parties and who need it. 
+               firewall can promote availability by protecting critical resources preventing them by attackers.
+
+
+=================================================================================================================================================
+
+Components of firewalls :
+
+Routing : firewall contains components that can acts as routers,allowing devices to connect to large network
+
+Data packet filtering :firewall can use as tunnel to filter data packets based on defination files 
+                       and IP packets based on source and destination ports, TCP/UDP source and destination ports.
+                       DPI(Deep Packet Inspection) examines a larger range of metadata and data connected with each packet the device interfaces.
+					   
+Malware Prevention : firewal can scan for malware to verify that link , attachments or web pages are sefe to open.
+
+Network Access control : they provide traffic monitering capabilities with traffic rules to recognize whether the IP address
+                         has access to the network.
+						 
+Remote Access : firewall provide vpn tunnel to the Remote users to access the company network.
+
+web filtering : firewall can filters the websites by their domain names.
+
+spam and Phishing : firewall offers spam email filter to block questionable emails.also block phishing emails.
+
+Encryption : advance firewalls can provide encreption to sensitive data over the network.
+
+=====================================================================================================================================================
+
+Firewall as service (FWaas): 
+- nerwork perimeter is disaparing in now days user accessing the resources from moblile devices and remote loctions 
+  and organisations are moving critical resources to cloud means many assets are outside the organisations direcet control.
+-FWaas provides security solution to cloud based assets of organisation which are not belong to physical infrastructure.
+-Fwaas provides next genration firewall security solutions to IT assets of organisation whether they are on premisea or in the cloud 
+ and no matter how or where they are accesssed from.
+
+==================================================================================================================================================
+
+Firewall Authentiction types :
+Authentication means that they are allowed to access the resources they are claiming for.
+
+1)Built in database authentication : 
+built in database authentication means user info is available on database like username and password.
+but it need to updated time to time according to new users and who left the organisation.
+
+2)LDAP : You can use Lightweight diretory access protocol to query and authenticate against your directory server.
+this is scalable method because a directory service is typically always kept uptodate.
+we do not need to update the local firewall because it is querying the directory server.
+
+3)Certificate Authentiction : 
+firewall can use public sighned certificate or self sighened certificate to authenticate itself.
+-if firewall is public facing to outer world it should be set up with publicly recognizable certificate to authenticate itself
+to anonymous users. which are issued by someone like verisigne, GoDaddy are known to comman users like mozilla firefox and internet explore.
+-However if a firewall is authenticate itself to known users which are in its control it can easily configured with self sighned certificate
+self sighned certificate freely issued by vendors of the firewall and because you are in control of the clients you can installed
+self sighned certificte on client browsers. the comman use case is here is SSL VPN users, VPN is secure browser base web appliction
+which prevent that error massage stating " the security certificate presented by this website is not issued by trusted certificate
+authority. 
+
+4)Two factors Authentication : A very comman method is to configure your firewall to require authentication using hardware token 
+as well as your personal password. In SSL VPN scenario you would log in ssl portal using your log in password and hardware token which is 
+displayed on your device ( mobile authenticater app)
+
+5)single sign on : In this scinario the user authenticate to network only once and then the info is stored in firewall active dirctory
+so user no need autheticate to access the network by providing same info to access network with notifiction.
+
+
+======================================================================================================================================================= 
+
+Content filtering or web filtering : 
+-conetent filtering process involving block or allow the content such as emails, webpages, files and suspicious items.
+-Content filtering works by identifiying contents pattern like object in images or text strings that must be restricted or screenout. 
+-Network admin can configure firewall, routers, DNS server and mail servers to filter unwanted or malicious content.
+
+Types of content filtering products :
+Web filtering : screening contents of webpages/ websites.
+Email filtering : screening of emails for spam and other objectional contents.
+executable filtering : screening out exucutable files that installs unwanted or malisious software.
+DNS filtering : Blocking content or network access from untrusted DNS resourcess.
+
+Benifits : 
+Boosts network bandwidth
+improves employee productivity.
+minimize the risk of malware attacks.
+Protects the organization personal datas spread over the internet.
+cuts down the illegal libilities as it prevents the spread or malicious content.
+
+Web filtering types :
+Allow list or Block list filter : filters the web pages or web sites.
+Keyword and content filter : filetr the webpages or websites that contains spacific keyword or contents that not allowed to access.
+
+customize filters are also there :
+client side 
+server side 
+Enterprizes filtering 
+personal filtering 
+Malware filtering 
+
+hardware base : configure routers or gateway applaiences to protect network access of unwanted resources.
+software base : installing software on the end users to protect against malicious contents.
+cloud base filter system : use of cloud base filter system no need install hardaware or software. 
+================================================================================================================================================
+
+IPS and IDS -> 
+
+IPS -> stands for intrusion prevention system which inspect the suspicious packet and discard them to before reching to destination server.
+IDS -> stands for intrusion detection system which inspect the packet and gives alert about suspicious packet to the network.
+
+-IPS/IDS uses signature based logic provided by IPS vendors to prevent/detect the malicious packet .
+-so for that the IDS/IPS data base updated in timely manner to avoid new threats.
+-This can be done not only on packet header inspection but also on deep packet inspection as well at all end points of the network.
+ state full insepection as well as url insepection.
+ 
+ IDS/IPS detection methods 
+ 1) signature based detection : the packet incepection done by signature of known attacks provided by vendors.
+ 2) Anmoly based detection : the packet filtering is done by predifined rule rather than signture based known attacks.
+ 3) Stateful protocol analysis : the packet filtering done by profile of accepted defination tcp/UDP connection for data transfer.
+
+==================================================================================================================================================
+Malware Protection -> 
+
+-Malware means the "malicious software" malware can come under many computer software forms 
+ that can affect your computer and devices.
+-some are viruses, worms, trojans and spyware and more.
+-In the case of spyware, it transmits personal information, such as credit card numbers.
+-even downloads from legitimate sites can sometimes have malware attached.
+-Well-designed antivirus protection has several characteristics. 
+-It checks any newly downloaded program to ensure that it is malware-free.
+-It is regularly updated to recognize the latest threats 
+-Robust antivirus software detects and warns against suspicious websites, especially those that may be designed for 
+ "phishing" 
+ (a technique that tricks users into entering passwords or account numbers)
+
+
+types of malware attack ->
+Viruses : Are attached to the .exe files so will not spread untill the users opens it.
+Trojans : Looks like legitimate software it steal your data as well as access to your system.
+Ransomeware : It is attack type that can make your system hostages to lock your data or system.
+spyware : It is attack type that can secretly looking to your privet data and gain info abour it.
+          example : looking into your internet usage.
+Worms : The attack replicate themsleve no host required they relay on outdated Oprating system and no anti-viruses installed.
+        It can slow down the internet traffic.
+		
+==================================================================================================================================================
+          

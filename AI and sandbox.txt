@@ -1,0 +1,16 @@
+Artificial iteligence and machine learning in cyber security.
+
+Benifits : -The technology gets better ovet time -> the AI/MI learns a bussiness network's work and recognize the patterns on 
+                                                   the network over time 
+		   -AI/MI cand handle loats of data -> Next genration firewall scan hundereds of files daily with no degradation of 
+											  services to the network.
+		   -Faster detection and respone time -> Using AI/MI software in firewall anti-malware on laptop or desktop is more 
+												 effective and responsive to threats.
+		   
+		   
+
+SandBoxing -> Is a security practice in which you use isolated environment for testing.
+              In other words you can run code, analyze the code in safe zone without affecting the application, system ot platform.
+			  sandboxing is very useful in zero-day attack threats (the attacks which are never seen before).
+			  if appliction has melicious code it can be run within the sandbox without impacting any other network components.
+		

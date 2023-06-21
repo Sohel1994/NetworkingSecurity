@@ -1,0 +1,54 @@
+
+MSS and MTU - MSS is nothing but Maximum segement TCP size which saticefies all the tcp protocol with 3 way hanshaking
+              at Transport layer. 
+			  MTU stands for maximum transmisson unit at sender or reciver side where they can handle large amount of 
+			  data packets (data blocks) at once perticular time.
+			  
+			  MTU : MTU = MSS + 40 (IP header + TCP header)  at Network layer layer3 in the form datagram.
+			  MSS : MSS = MSS = MTU - 40 (IP header + TCP header) at Transport layer  layer4 in the form of segmant 
+			  
+
+MSS : Maximum TCP segement size :at transort layer  without TCP header the chunk segment of data is nothing but MSS.
+
+
+
+
+TCP - Transmission control protocol is transport layer protocol.
+      connection oriended protocol.
+	  each data packet wrapped with TCP header which consist of 10 mandotary fields totaling 20 bytes.
+	  and having optional field of 0 to 40 bytes.
+	  
+	  1)Source port ( 16 bits) : this field identify the port number of senders application programme.
+	  
+	  2)Destination port ( 16 bits ) : this field identify the port number of recivers application programme.
+	  
+	  3)Sequence number ( 32 bits ) : this field gives 32 bit random initial squence number which 
+	    incremented by number data bytes transfer.
+		
+	  4)Acknowldge number ( 32 bits ) : this field gives 32 bit expected number of next sequence of tcp data.
+	  
+	  5)Header length ( 4 bits ) : this field gives size of TCP header length.
+	  
+	  6)Reserved bits ( 6 bits ) : this are set to 0 for future use.
+	  
+	  7)Flag bits ( 6 bits ) : 
+	    - URG flag : set when the data has high priority than other data. 
+		- ACK flag : set when the connection estashbishment and data transfer.
+		- PSH flag : tells application to  send this data immediatly. 
+		- RST flag : set when connection needs to re-established.
+		- SYN flag : is used to set initial sequence number. 
+		- FIN flag : tell that end of TCP connection. 
+		
+	  8)Window size ( 16 bits ) : this parameter tells buffer capacity of recivers side which used to data flow control.
+	  
+      9)checksum size ( 16 Bits ) : the cylick redundancy check calculated by sender use this field 
+	    for error control during transmission.
+		
+	  10)Urgent pointer ( 16 bits ) : the urgent pointer points to the end of urgent data
+									   this field appeares only URG flag is set. 
+									   
+	  11)Optional data ( 0 to 40 bytes) : this field contains optional peices of information such as max segment size 
+										  timestamp , window size extension and padding.
+										  
+										 
+===============================================================================================================================

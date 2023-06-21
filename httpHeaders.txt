@@ -1,0 +1,50 @@
+ 
+ Http headers : - used to pass additional info between client and severe through request and responce URI.
+
+
+-General headers :  mostly used in both the cases request and responce.
+ 
+ Connection : Tells that TCP conection closed or open for data transmission.
+ Content-encoding : Tell that what kind of encoding could be done during data transmission. ( ex : gzip, defete).
+ Content-length : Tells that length of massage body in Bytes format.
+ Contebt-type : Tells that body type of massage ( data format - text/html).
+ Transfer-encoding : Tells that data should encoded in chunk encoding format within http transmission.
+ 
+=====================================================================================================================================
+
+-Request headers : this headers are uses in client request 
+ 
+ Accept : Tells that what kind of data can be accept by the client from the severe,Such as image related, document related.
+ Accept-Encoding : Tells that what kind of encoding can be accept by client for data. 
+ Authorization : Can be used to provide credential that authenticate user agent with the severe, 
+                 allowing access to the protected server.
+ Cookie : serever provide cookie to maintain session which are stored in web browser of client 
+          to avoide same uri request by user with credential.
+ Host : This header is spacified domain name of servers requested resource. 
+ If-Modified-since : if any update happend on server resoures since last access to resource.
+ If-None-match : basicly used entity tag which is send by server when user accessed the resource lastly for any updation 
+                 happend on server resources.
+ Origin : this header used as domain name of one resource to access the another resource or domain.
+ Referer : this header gives the uri of base request where thec current request is generated form. 
+ User-Agent : gives the information about browser such as browser version, 64/32 bit version , operating system, software version etc
+ 
+======================================================================================================================================
+
+-Responce headers : This headers comes in responce by serever.
+
+ Allow-Control-Allow-Origin : this header is tells Origin domain has access or not to serever.
+ Chache-Control : this header tell that how cache can be save on client browser ( like cache related info eg: nochache)
+ ETag : this tag header shared by server to client, related to rquested resources
+ Expires : This tells that client how much time chache is valid for requested resource.
+ Location : this tells that user is redirected to new location resource on be half of requested resource.
+ Pragma : this header tell that how cache can be save on client browser ( like cache related info eg: nochache)
+          note : this used in older version so has loar of vulnerabilities are there.
+ Server : this provide info about serever like version. 
+ 
+ Set-Cookie : issue cookie to be save on clien browser which can be used in for subsequent request in future.
+ WWW-Authentication : this header provides details of Authentications which are supported by server. 
+ X-frame-Option : this tells that how the responce should look on the browser. ( eg : css and html )
+ 
+=============================================================================================================================== 
+ 
+ 

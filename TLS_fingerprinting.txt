@@ -1,0 +1,23 @@
+
+TLS - Transport layer security 
+- It is protocol use to encrypt web base communication between client and sever.
+
+TLS fringerpriting :- To gather info about client and server on the web,Such as OS and browser version of client/sever.
+
+TLS handshakes process :- 
+1)client sends client hello msg with supported encrypted methods(cipher suits) to server.
+2)server compare the client msg with cipher suits list supported by servers itself 
+  and sends server hello msg with choosen cipher suits list and public encrypted key (certificate).
+3)when client recives the server digital certificate it uses public key from issuing certificate authority to verify 
+  the certificate digital signature.( server name should match the server DNS name on certificate and should not expired)
+4)after proper verification client sends random premaster secrete with sever public key to the server and 
+  then server decrept premaster secrete with privet key and both generate session key using 
+  -client random
+  -serever random
+  -premaster secrete.
+5)client sends finished msg with encrypted session key and server responds with encrypted session key finished msg.
+
+TLS fringerpriting can be helpful in Botnet protection by DDos attack by identifiying client hello massege 
+with their cipher suits list which will be the same in all the traffic to the server.
+
+================================================================================================================================

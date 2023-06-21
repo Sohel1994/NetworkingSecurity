@@ -1,0 +1,164 @@
+ADC : Application delivery controller
+- Manages the internet traffic to the requested servers.
+- Known as for SSL(Security socket layers) termination, helth checks, TCP reuse, compression, content swithing and caching.
+- thire duty is load balancing and web accelerator software that enables the uninterupted interaction between the client
+  server.
+- It provides functional flow and management of data. 
+
+Application Delivery Controller manages the load of all servers incase one sever failed,
+its rout the traffic to healty server to avoide downtime of the systeam 
+-Application Delivery Controller can be hardware based or can be software defined.
+
+Some of its functions are:
+->Application Acceleration
+->RAM Caching (storage of static content)
+->SSL offloading (decryption of encrypted content)
+->Traffic shaping (appropriate distribution)
+->Multiplexing
+->Compression (compression of media content before transferring to server)
+->Content switching
+->HTTP Rewrite and Redirection.
+
+Some of the features:
+->It works on Layer 2 3, 4, and 7 for balancing the load.
+->It can work on both large-scale dedicated areas and microservices bases.
+->It offers protection against data loss and blocks malicious attacks effectively.
+->It consists of various proxy server connections and DNS applications.
+->It integrates and monitors multiple protocols like HTTPS, HTTP, DNS, TCP, and UDP, FTP/S, RADIUS , SIP etc.
+
+==================================================================================================================================================
+
+GSLB :  Is an advanced type of application delivery controller known as Global Server Load balancing which is DNS base solution 
+manages the resources around the multiple-site-data centres. 
+
+GSLB methods are algorithms that the GSLB virtual server uses to select the best-performing GSLB service. 
+After the host name in the Web address is resolved, the client sends traffic directly to the resolved service IP address.
+
+GSLB methods : 
+1) Round Robin : When the GSLB virtual server configured round robin method it continuesly rotatet the list of services that
+                 are bound to it when virtual server recive the request it assigns the conection to the first service then 
+				 move to bottom of the list.
+				 
+2) Less responce time : When the GSLB virtual server configured to this method it select service with lowest responce to the 
+                        user which is lowest value = current active connection * avg responce time. 
+
+3) Least connection : In this method select the service having least active connection this is the default method.
+
+4) Least Bandwidth : In this method selects the service that serving the least amount of traffic. 
+5) Least packets : In this method selects the service that reciving least amount of packet in last 14 seconds. 
+6) Source IP hash : In this method the service is select over the Hash value of client IP4 and IP6 address. to direct the request the 
+                    to the perticular network where the rquest is belongs to. 
+===============================================================================================================================================
+
+Authentiction types : The user can authenticte by using local user account or by external serves to access services or appliencess.
+				     1)LOCAL : user can access by using password which info is stored on servers itself.
+					 2)RADIUS : authenticte on external RADIUS server.
+					 3)LDAP : authenticte on external LDAP servers. 
+					 4)TACACS : authenticte  on Terminal Access Controll Access Controll Systems.
+					 5)CERT : authenticate to appliancess by using client certificate without using external authentication 
+					          servers.
+					 6)SAML : authenticate to server that supports the secutity assertion markup language. 	 
+                     7)WEB : authenticte to web server, providing credential that requires to web server in http request
+							 analysing the server responce that user is authenticate successful.
+					 8)PUSH notification : user do not have to enter the OTP mannully which is recived on thire registered device 
+					                       admin can configured the appliancess gateway in such way on user registered device using 
+										   Push notification.
+					 9) Native OTP : appliancess supports one time password or OTP without having 3rd party server.
+					 10)email OTP : authentiction can be done by user registered email id to access the services.
+					 11)nfactor authentication : to gain access to services user needs to authenticate by multi proofs 
+					                              this enhacess the secutity of application. 
+												  
+												 
+========================================================================================================================================
+
+http Rewrite and Redirect :
+
+Redirect : This is client side, simply URL we write in browser it will automaticaly updated to new URL.
+           1) User request -> server responce with redirect stastus -> user request to new URL -> server responce with URL.
+		   2) can redirect to same side or unrelated site.
+		   3) Supports following redirects : 301-Permanent, 302-Found, 303-See Other, 307-temporary. 
+		   4) can rediret to same site or unrelated site.
+		   
+Rewrite  : This is server sida, rewrite of the URL before it is fully processed by internet information services.
+		   the changes not shown in browser means those are hidden from user.
+		   1)User request -> URL rewites the URL makes new requests to updated page 
+             ( the process still in IIS internet information services)-> 
+		   2)Redirect status not applicable. 
+		   3)Genrally rewrite the same URL with relative path, 
+		     if the URL rewrite the diffrent site then URL Rewrites funtions as a reverse proxy  
+================================================================================================================================
+
+Traffic manager routing methods : 
+Traffic manager applies the traffic routing method associated to the each DNS query it recives.
+
+ 
+1) Priority : select Priority routing when you want to have a primary service end point. 
+			  You can provide multiple backup end point in case Primary end point not availabale. 
+			  
+2) Weigheted : select Weigheted routing when you want distribute traffic across set of end point based on their weight.
+               set the weight the same to distribute evenly across the all endpoint. 
+
+3) Performance : select the preformance routing when you have the end points in diffrent geographic loction
+				 you want end user select closest end point to avoide network latency.
+				 
+4) Geographic : select geographic method to direct end users to spacific endpoints. Based on theire DNS quereis originated 
+                 geographically.  
+				 
+5) Multivalue : select Multivalue method for traffic manager profiles that can only have IP4/IP6 address as endpoints. 
+
+6) Subnet : select Subnet method to map set of end-user IP address ranges to a specific endpoints. 
+
+
+=================================================================================================================================
+
+Load balancing algorithm technique : 
+
+1) round robin : In this technique the client request send to first appliction server and then second and third an so on.
+2) weighted round robin : In this method the client request send to appliction server according to there capacity in round robin manner
+                          For example the application has 3 server 1st one has doubled capacity than 2nd and 3rd and we have 
+                          5 client request then 2 are sends to 1st server then one is to 2nd server and one is 3rd and agian last one is 
+                          to 1st server. 
+						  
+3)Least connection load balancing : the client rquest sends to appliction server which has least active connections. 
+
+4)weighted least connection : the client request sends to appliction server which having least connection with high weighted capacity. 
+
+5)Resource balancing : Resource balancing makes decision on status indicators retrived from load master of backend server.
+                       load master checks regular status of backend server and dynamicaly decides the weight to each server. 
+					   In this manner load master check regular helth check on real server.
+
+6) SDN adaptive load balancing : this algorithm combines knowledge from layer 2,3,4 and 7 and input from SDN controller to make 
+                                 make more optimised traffic distribution. this allows information about server status and appliction 
+								 running on them. 
+
+7) Fixed weight load balancing : In this method the admin assign weight to each appliction server relative to thire capacity 
+                                  the traffic is distributed to highest weight appliction server first. 
+
+8) Weigheted Responce time : In this algorithm the server recives the next request immediately who has responce time is low.
+                              as well as consider the weight of application server ( the capacity of handling request)
+
+9) Source IP hash balancing: In this algorithm sourc IP and destination IP addresess are using hash generated request to allocate 
+                             appropriate server to client. 
+
+10) URL hash balancind : This algorithm same as source IP hash, the only diffrence is hash created is based on URL based.
+                         this ensure that client request to perticular URL are always sends to same backend server.
+						 
+========================================================================================================================================
+
+
+High Availability : -A high Availability deployment of appliances can provide the uninterupted operations in transactions. 
+                    With one appliances configured as Primary node which accepts connections and manages server. 
+					While other one is moniters the primary one known as secondary node if any reason primary gets fails 
+					the secondary takes over the task of primary one.
+					- The secondary node moniters primary with regular health check whether it is accepting connection or 
+					not if primary gets failed then secondary node retries the connection for certain period
+					after which determines primary not functioning normally then after secondary takes over 
+					called failover.
+                    - After failover all client connections gets restablished again to maintain a server.
+					  but session management rules are maintain as they were before the failover.
+                    -With web server logging persistance enabled no data is lost due to failover.
+                    -for log persistance to be enabled, the server configuration must carry entries for both systems 
+					 in log.conf file.
+                    - to make this setup both the node must be in same subnet.
+                    - you can configure fail safe mode when neither mode is primary. 					
+					

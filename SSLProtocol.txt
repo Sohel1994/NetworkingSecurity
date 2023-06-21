@@ -1,0 +1,40 @@
+
+SSL protocol : secured socket layer protocol
+               Which provides the security to data transfered between server and webbrowser.
+               encrypts the link between the browser and server to protect the data from an attack.
+			   
+			   
+
+Secured socket layer protocol : 
+1)SSL Record Protocol : 
+2)Handshake Protocol :
+3)Change cipher spec Protocol : 
+4)Alert Protocol :
+ 
+1)SSL Record Protocol : Provides 2 services Confidentiality and Message Integity 
+                        data is divided into fragments 
+						then encrepted MAC(Message authentication code) genrated by
+						by SHA(secured hash protocol) and MD5(message digest) is appended.
+						then last stage SSL heder is appended.
+
+2)Handshake Protocol : Is used to establishe session between server and client. in 4 phase. 
+                       Phase-1) In this phase both client and server sends hello packets to each other 
+					            with cipher suite and exchanged supported protocol version.
+					   Phase-2) Server sends his certificate and server-key-exchange to client with server-hello-end packet.
+					   Phase-3) In this phase client sends his certificate and client-key-exchange.
+					   Phase-4) Cipher suites occurs and hand shake protocol ends.
+					   
+3)Change cipher spec Protocol : This protocol uses SSL record protocol 
+                                unless SSL handshake protocol completed the SSL record output is in pending state. 
+								After handshake Pending state coverted current state.
+								Change cipher protocol consist of 1 byte message having 1 value 
+								purpose is caused pending state copied into current state.
+								
+4)Alert Protocol   : Is used convey SSL related alerts message contains 2 byte in this protocol.
+                     1 byte - level and 2nd byte-alert.
+					 
+					 Warning : (level=1) : No empact connection - like Bad certificate, no certificate, certificate expired, certificate unkown etc.
+					 Fatal error : (level = 2) break the connection - like Handshake shake failuer, illegal parameters, Bad record mac, Unexpected message etc.
+					 
+					 
+								

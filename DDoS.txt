@@ -1,0 +1,156 @@
+DDos : Distributed Denial of services : means the appications or server resources overhamled with malisious traffic. 
+       this traffic genrated by attacker by hacking computer or IOT things who are geniune users. known as bots.
+       the DDos attacks catogries in two type http attack and syn attack.
+       -http attack found in layer 7 appication and layer 6	session layer we can observed that when page loadin taking time.
+       with same http request. at serval interval of time.
+       -SYN attacks and UDP attak found in Physical layer and Data link layer where user try access network equipments to communicte with
+	    server this in mesured in large no of packets per seconds (example hand shake to comunicate with server.)
+		
+		
+========================================================================================================================================================================
+		
+		
+DDos Matigation Stages : Means the the targeted server protected from Distributed denial of services attack. 
+                         Using the specially designed network equipments. a targeted server matigate the incoming threats.
+						 
+Stages :
+1) Detection : the website needs to distiguish an attack from high volume of normal traffic.
+               if website launch the new realese with new legimate visitors it needs to avoid them or restrict them to 
+			   view the website content.
+			   
+2) Responce : The DDos protection network responds to incoming identified threats,
+              by intelligently droping malisious bot traffic, and absorbing the rest of traffic. 
+			  using WAF page rules for layer 7 attcks and another filteration process to handle lower level L3/L4 attack 
+			  such as NTP(network time Protocol) attck and memcached attack.  
+			  network time protocol attck means the trageted server overwhelm with applified UDP traffic. 
+			  
+3) Routing : By intelligently routing the traffic an effective Matigation solution that will break the remaining traffic 
+             into manageble chunks preventing deniel of service. 
+
+4) Adaption : A good network analyses traffic for Patterns such as reapting offending IP blocks, 
+             perticular attack comming from same region and some perticular protocols used immproperly. 
+			 by adapting perticular attack pattern the protection service harden itself for future attacks. 
+			
+=============================================================================================================================================================================
+
+
+Choosing DDos matigation services :
+
+1) Scalability : the service needs to larger than the attack ever happend. in consideration of growing buisness
+                  as well as growing size of DDos attaack.
+
+2) Flexibility : It should be flexible during online state of website while admin working on implement new page rules simulteniously.
+
+3) Reliability : It is like seatbelt the matigation service you need only when you need it
+                 but when it comes to functionality of website the network engineer should works 24 for hours to make website online
+				 and identifining the new attacks.
+				 
+4)Network size : Having large size of network and extensive data transfer allows the DDos protection service provider 
+                 to analyse and respond to attack quickly and efficiently often stopping them before they occar.
+
+
+=================================================================================================================================================================================			 
+                  
+DDos Prortection Techniques : 
+
+Reduce attack surface Area : Avoid expose our application or resources to ports, protocols or applications,
+                             from where they do not expect any communication.
+							 you do this by place them behind load balancer or content distribution network (CDNs)
+							 and restrict direct internet access to them.
+							 or else can use network firewalls or access control list.
+
+Plan for scale : 2 scale considered in matigate large scale DDos attacks bandwidth capacity and server capacity to absorb or matigate.
+                 
+				 transite capacity or bandwidth scale : DDos matigation provider need to provide large amount of bandwidth 
+				                                        that the service of your network can easily available to end user of any region with normal traffic.
+				                                        now a days the appliction deployed on CDNs support and smart DNS resolution services that gives extra 
+				                                        layer to network so this also consider to 
+				 
+				 Server capacity : DDos attacks are volumatric attack that use lot of resources there for you need to scale up
+				                   or scale down on your computation resources.
+								   you can do  by using the servers can handle large amount of traffic.
+								   or can use load balancer which continually monitor traffic and shift the load between resources. 
+								   to prevent overload any resources.
+								   
+know what is normal and abnormal traffic : base line is the traffic should handle normaly to every request by the host without 
+                                           affecting availablity called rate limiting 
+										   more advanced protection go further handle traffic which legimate by anlysing the 
+										   packets individualy. 
+										   to do this you need to understand characterstics of good traffic usually recived
+										   and be able to compare each packet against this baseline.
+										   
+Deploy firewalls for sophisticated attack : A good practice to use web application firewalls against http attack such as 
+                                           SQl injection attack, cross site scripting due to unique ness of this attack you can 
+										   create customized metigation against legimate traffic list 
+										   and against the bad IP's where these request came from. 
+										   
+=======================================================================================================================================================================
+
+Bot Detection : 
+
+-Is the process wether the traffic is comming to your website comming fron human or automated programms(bots)
+-Bot traffic is combination of all the bots browsing your website and mobile apps 
+-There is some good bots and some bad bots 
+-good bots are such as search engine bots like googlebots use for ranking the website.
+
+why bot detection important? 
+-without good bot detection you even know you are under attack or not
+-certain bot attacks leads to account take over, price scrapping and web scraping.
+-bot detection can reduce IT coast.- bad bots takes up band width so it will increase the bills form your server, API's and CDNs provider.
+-Protect user expirence - sudden spike of bot traffic can lead to slow down the website or crash your website.
+-stay ahead or your competitors - some competitors rely on bots that scrap your price or content to underbid or rebulish their own.
+
+How to detects bots and bot traffic?
+-Abnormal high page views on your website - this bot attacks will try to overwhelm your website whether it's DDos or large no of scrapers.
+-Abnormally high bounce rate - every bot has its goal once it achives it's goal or found out can not achive it then it immediatly leave the website 
+this will shows high bounce rate.
+-Abnormal session duration - session in the range of milliseconds are suspicious, as abnormaly long sessions human does not stays for at least of few miniutes.
+-Keep eye on traffic from unkown locations. 
+-Junk conversion like user adding items into the cart without buying them.
+
+Comman bot detection techniques, methods and limitations?
+CAPTCHAs : bot can detect by reconising of audio or video to access resources.
+WAF : Web application firewall can protect server from sql enjection, cross site scripting and session highjacking.
+      they are set rules for good traffic and bad traffic
+	  WAF rely on IP reputation so when request from IP is bad then they block all the request from that IPs.
+
+MFA : Multifactor authentication  it can prevent your user against the credential stuffing attack.
+      But unable to protect server from DDos attacks such like web crawelrs attacks.
+
+
+Why bot detection is challanging? 
+- now a days the bot attacks not only to the website they are attacking all you end points like mobile apps, server, APIs web apps.
+-Now a bots can use same technologies as humans. they can use browser extremly same fingerprints to human browser.
+-bot can attacks across time and space means they can attack your websites from several countries for several time.
+-bot cab switch between IPs they can attack with different IPs by switch one to another.
+-Baas Bot as service  this is service which can create bot net attack by malisious operator to website,
+ find loop hole in their security app aginst the successful request.
+ 
+Mitigating bots with bot detector?
+-If you want to identify bots you want the advanced bot detection solution.
+-bot solution relys on data so its not only analyse request at regular interval of time but also 
+ analyse request packet at all end point in real time.
+-Must uses server side and client side signals to detect bots. server side bots can easily detect.
+ but advanced bot having consistant HTTP,TLS and TCP fingerprints. can not be detect easily.
+ so we need browser tracking, app tracking and user activity tracking techniques at client side.
+-An advanced bot detection are must be allow good bots.
+-Advanced bot detection solution must have machine learning ability to stay ahead of the letest bot trend.
+-Bot detection solution must have to tackel or stop bot attaks to protect user.
+
+
+==============================================================================================================================================================================
+
+How does bot can detected?
+-Monitor your traffic and data packets at every end points in real time sudden spice in request and longer sessions 
+-Implement bot detection and mitigation solution on client side and server side as well.
+-Block known bot and their operators.some known IP addresess and Domains.
+
+What are the bot attacks?
+
+Scraping : in scraping bot immediatly extract content and information from web pages.
+           while all type of scraping is not malicious like goole bot srcaping is used to rank website.
+		   
+Brute force attack : To access protected web site bots try to guess the credential with multiple combination.
+
+Dos and DDos attack : Denial of distribution of service multiple bots can send request to server to slow down the services for norma traffic.
+                      or denial of service bot sends multiple request in fraction of second for longer time to perticular resource to block from geniune user.
